@@ -1,0 +1,42 @@
+
+.nav-item{
+    font-family: 'Robotop', sans-serif !important;
+    font-weight: 900 !important;
+}
+p{
+    font-family: 'Robotop', sans-serif !important;
+    font-weight: 800 !important;
+}
+.card{
+    border-radius: 5px;
+    width: 800px;
+    align-items: center;
+    margin-left: 75px;
+    height: 500px;
+}
+.counter{
+    width: 50px !important;
+    height: 50px !important ;
+    background-color: cornflowerblue !important;
+    color: white !important;
+    border-radius: 24px  !important;
+    pointer-events: none;
+    margin-left: 25px;
+}
+.options{
+    width: 900px;
+}
+button{
+    width: 90%;
+    margin-right: 50px;
+}
+.winning{
+    width: 155px;
+    height: 397px;
+    margin-top: -452px;
+    margin-left: 998px;
+}
+.optionsbtn{
+    margin-left: 42px;
+}
+ 
