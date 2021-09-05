@@ -9,6 +9,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.min.js'; // Archivo Javascri
 import { HashRouter as Router, Route, Switch, BrowserRouter } from 'react-router-dom';
 import Home from './componentes/home/Home';
 import Game from './componentes/game/Game';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 ReactDOM.render(

@@ -12,6 +12,8 @@ const Home  = () => {
             dificultad: ''
         })
 
+       
+
         const handleInputChange = (event) =>{
             //console.log(event.target.value)
             setDatos({
@@ -45,13 +47,14 @@ const Home  = () => {
                     <div class="form-group">
                         <label>Usuario</label>
                         <input type="text" name="usuario" class="form-control" id="usuario" placeholder="Ingrese nombre"
-                        onChange={handleInputChange}
+                        onChange={handleInputChange} required
                         />
                     </div>
                     <br></br>
                     <div class="form-group">
                         <label for="selectCategory">Categoria</label>
-                            <select class="form-control" id="categoria"  name="categoria" onChange={handleInputChange}>
+                            <select class="form-control" id="categoria"  name="categoria" onChange={handleInputChange} required>
+                                <option value="">Seleccionar Categoria</option>
                                 <option value="21">Deporte</option>
                                 <option value="27">Animales</option>
                                 <option value="25">Arte</option>
@@ -62,7 +65,8 @@ const Home  = () => {
                     <br></br>
                     <div class="form-group">
                         <label for="selectCategory">Dificultad</label>
-                            <select class="form-control" id="dificultad"  name="dificultad" onChange={handleInputChange}>
+                            <select class="form-control" id="dificultad"  name="dificultad" onChange={handleInputChange} required>
+                                <option value="">Seleccionar Dificultad</option>
                                 <option value="easy">Facil</option>
                                 <option value="medium">Normal</option>
                                 <option value="hard">Dificil</option>
