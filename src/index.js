@@ -14,7 +14,7 @@ import Game from './componentes/game/Game';
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route  path="/Home/:Game">
+      <Route  path="/Home/:Game/:user/:category/:difficult">
         <Game/>
       </Route>
         

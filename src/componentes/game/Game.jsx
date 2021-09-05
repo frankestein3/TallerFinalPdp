@@ -4,20 +4,26 @@ import './game.css';
 
 const Game = () =>{
  
-        const [preguntas, setPreguntas] = React.useState([])
+        const [preguntas, setPreguntas] = React.useState(null)
 
         React.useEffect(()=> {
-            obtenerPreguntas();
+            fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficult}&type=multiple`)
+            .then( res => res.json())
+            .then ( data => {
+                console.log(data.results)
+                setPreguntas(data.results)
+                //console.log(preguntas[0].question)
+            })
+                
+                  
+            
         },[])
 
-        const obtenerPreguntas = async () => {
-            const data = await fetch('https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple')
-            const dataFormato = await data.json()
-            console.log(dataFormato.results)
-            setPreguntas(dataFormato.results)
-            console.log(preguntas[0].question)
-            console.log(preguntas[0].incorrect_answers[0])
-        }
+        const {user} = useParams();
+        const {category} = useParams();
+        const {difficult} = useParams();
+
+        
    
         return (
            
@@ -26,10 +32,10 @@ const Game = () =>{
                     <div class="collapse navbar-collapse" id="header"> 
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link">Pedrito Perez</a>
+                                <a class="nav-link">{user}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" >Nivel: Facil</a>
+                                <a class="nav-link" >Nivel: {difficult}</a>
                             </li>
                             <li class="nav-item " >
                                 <a class="nav-link">Ganacia: 0</a>
@@ -42,7 +48,7 @@ const Game = () =>{
                     <br></br>
                     <button class="counter">30</button>
                     <br></br>
-                    <p>¿Cual es el nombre de Batman?</p>
+                    <p>question</p>
                     <br></br>
                     <button class="btn btn-dark btn-lg btn-block optionsbtn">Clark Kent</button>
                     <br></br>
