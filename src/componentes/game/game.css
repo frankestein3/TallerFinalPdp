@@ -1,42 +1,53 @@
-
 .nav-item{
     font-family: 'Robotop', sans-serif !important;
-    font-weight: 900 !important;
+    font-weight: 900 !important;   
 }
 p{
     font-family: 'Robotop', sans-serif !important;
     font-weight: 800 !important;
 }
-.card{
+.card_game{
+    background-image: url("https://fotografias.antena3.com/clipping/cmsimages02/2020/01/10/ABE9B428-C9D0-4676-80E0-D1E512848828/57.jpg");
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    padding: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 5px;
     width: 800px;
-    align-items: center;
     margin-left: 75px;
-    height: 500px;
+    height: 550px;
 }
+
 .counter{
     width: 50px !important;
     height: 50px !important ;
-    background-color: cornflowerblue !important;
+    background-color: black !important;
     color: white !important;
     border-radius: 24px  !important;
     pointer-events: none;
-    margin-left: 25px;
 }
+
 .options{
     width: 900px;
 }
+
 button{
     width: 90%;
     margin-right: 50px;
 }
-.winning{
+
+.card_winning{
+    background-image: url("https://fotografias.antena3.com/clipping/cmsimages02/2020/01/10/ABE9B428-C9D0-4676-80E0-D1E512848828/57.jpg");
     width: 155px;
-    height: 397px;
+    height: 425px;
     margin-top: -452px;
     margin-left: 998px;
+    color: white;
+    padding: 20px;
 }
+
 .optionsbtn{
     margin-left: 42px;
 }
- 

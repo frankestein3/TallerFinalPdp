@@ -1,8 +1,24 @@
 .card{
+    background-image: url("https://fotografias.antena3.com/clipping/cmsimages02/2020/01/10/ABE9B428-C9D0-4676-80E0-D1E512848828/57.jpg");
     align-items: center;
-    
+    font-weight: bold;
+    color: white;
+    padding: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .btn{
     margin-left: 10px;
+}
+
+footer{
+    text-align: center;
+    text-decoration: none;
+    background-image: url("https://besthqwallpapers.com/Uploads/22-11-2020/146424/thumb2-dark-blue-abstract-background-blue-lines-background-material-design-stylish-blue-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    font-weight: bold;
+    color: white;
 }
