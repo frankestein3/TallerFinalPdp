@@ -8,19 +8,21 @@ const Game = () => {
   const [indice, setIndice] = useState(0)
   const [ganancia, setGanancia] = useState(0)
   const [modal, setModal] = useState(false)
+  const [num, setNum] = useState(30)
+
   let intervalRef = useRef();
+
+  const { user } = useParams();
+  const { category } = useParams();
+  const { difficult } = useParams();
+
   const decreaseNum = () => {
-    if (num > 0) {
       setNum((prev) => prev - 1);
-      console.log(num);
-    } else {
-      console.log(num);
-    }
+      
   };
-  const [num, setNum] = useState(30);
+ 
 
   useEffect(() => {
-
     fetch(
       `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficult}&type=multiple`
     )
@@ -29,19 +31,21 @@ const Game = () => {
         console.log(data.results);
         setPreguntas(data.results);
       });
-
-    intervalRef.current = setInterval(decreaseNum, 1000);
-
-    //return () => clearInterval(intervalRef.current);
-
   }, []);
 
-  const { user } = useParams();
-  const { category } = useParams();
-  const { difficult } = useParams();
+  useEffect(() => {
+    console.log(num);
+    if (num === 30) {
+      intervalRef.current = setInterval(decreaseNum, 1000);
+    } else if (num === 0) {
+      window.location = "/";
+    }
+  }, [num])
+ 
 
   const handleClose = () => setModal(false);
   const cambios = () => {
+    clearInterval(intervalRef.current);
     setNum(30);
     setIndice(indice + 1);
     setGanancia(ganancia + 1000);

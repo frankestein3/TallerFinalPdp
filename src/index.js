@@ -14,7 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route  path="/Home/:Game/:user/:category/:difficult">
+      <Route  path="/Home/:Game/:user/:category/:difficult"> 
         <Game/>
       </Route>
         

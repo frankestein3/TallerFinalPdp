@@ -20,6 +20,7 @@ const Home = () => {
 
         })
     }
+    
     const enviarDatos = (event) => {
         event.preventDefault();
         let user = datos.usuario
