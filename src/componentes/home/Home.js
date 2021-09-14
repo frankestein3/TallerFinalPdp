@@ -55,7 +55,7 @@ const Home = () => {
                                 <option value="">Seleccionar Categoría</option>
                                 <option value="21">Deporte</option>
                                 <option value="27">Animales</option>
-                                <option value="25">Arte</option>
+                                <option value="23">Historia</option>
                                 <option value="20" >Mitología</option>
                                 <option value="22" >Geografía</option>
                             </select>

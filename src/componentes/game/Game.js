@@ -8,6 +8,7 @@ const Game = () => {
   const [indice, setIndice] = useState(0)
   const [ganancia, setGanancia] = useState(0)
   const [modal, setModal] = useState(false)
+  const [modalClose, setModalClose] = useState(false)
   const [num, setNum] = useState(30)
 
   let intervalRef = useRef();
@@ -38,12 +39,14 @@ const Game = () => {
     if (num === 30) {
       intervalRef.current = setInterval(decreaseNum, 1000);
     } else if (num === 0) {
-      window.location = "/";
+      setModalClose(true)
     }
   }, [num])
  
 
   const handleClose = () => setModal(false);
+  const handleModalClose = () => setModalClose(false);
+
   const cambios = () => {
     clearInterval(intervalRef.current);
     setNum(30);
@@ -53,6 +56,8 @@ const Game = () => {
       setModal(true);
     }
   };
+
+  const fail = () => setModalClose(true);
 
   return (
     <div>
@@ -82,15 +87,15 @@ const Game = () => {
           {preguntas[indice] ? preguntas[indice].correct_answer : ""}
         </button>
         <br></br><br />
-        <button class="btn btn-dark btn-lg btn-block optionsbtn">
+        <button class="btn btn-dark btn-lg btn-block optionsbtn" onClick={fail}>
           {preguntas[indice] ? preguntas[indice].incorrect_answers[0] : ""}
         </button>
         <br></br><br />
-        <button class="btn btn-dark btn-lg btn-block optionsbtn">
+        <button class="btn btn-dark btn-lg btn-block optionsbtn" onClick={fail}>
           {preguntas[indice] ? preguntas[indice].incorrect_answers[1] : ""}
         </button>
         <br></br><br />
-        <button class="btn btn-dark btn-lg btn-block optionsbtn">
+        <button class="btn btn-dark btn-lg btn-block optionsbtn" onClick={fail}>
           {preguntas[indice] ? preguntas[indice].incorrect_answers[2] : ""}
         </button>
       </div>
@@ -109,6 +114,16 @@ const Game = () => {
       <Modal show={modal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>¡GANASTE!</Modal.Title>
+        </Modal.Header>
+        <Modal.Footer>
+          <Button onClick={(() => window.location = "/")}>
+            Ok
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      <Modal show={modalClose} onHide={handleModalClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>¡PERDISTE!</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
           <Button onClick={(() => window.location = "/")}>
